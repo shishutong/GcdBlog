@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 """GCDBlog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,7 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from myblog.views import IndexView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', IndexView.as_view(), name='index'),  #首页的url
 ]
