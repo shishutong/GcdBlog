@@ -17,8 +17,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from myblog.views import IndexView
+from myblog.views import ArichiveView
+from myblog.views import TagView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index'),  #首页的url
+    url(r'^archive/$', ArichiveView.as_view(), name='archive'),
+    url(r'^tags/$', TagView.as_view(), name='tags'),
 ]

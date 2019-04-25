@@ -39,7 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myblog',
+    'pure_pagination',
 ]
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 3,    #中间显示的个数
+    'MARGIN_PAGES_DISPLAYED': 2,  #两边显示的个数
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
