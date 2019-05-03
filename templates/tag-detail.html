@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block  title%}
+归档
+{% endblock  %} 
+
+{% block content %}        
+<div class="content-wrap">
+{% regroup all_blog.object_list by create_time.year as dates_by_year %}
+
+    {% for blog in tag_blogs.object_list %}
+        {{ year.grouper }}
+
+        {% regroup year.list by create_time.month as dates_by_month %}
+        {% for month in dates_by_month %}
+            {{ month.grouper }}
+            {% for blog in month.list %}
+                {{ blog.title }}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+
+{% endblock  %}
